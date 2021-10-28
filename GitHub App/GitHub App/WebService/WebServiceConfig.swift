@@ -1,8 +1,8 @@
 //
 //  WebServiceConfig.swift
-//  TrueWeight Task
+//  GitHub App
 //
-//  Created by Suresh Kumar Linganathan on 30/12/20.
+//  Created by Sureshkumar Linganathan on 27/10/21.
 //  Copyright © 2020 SureshKumar. All rights reserved.
 //
 

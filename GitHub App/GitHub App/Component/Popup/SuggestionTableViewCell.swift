@@ -1,9 +1,9 @@
 //
 //  SuggesstionTableViewCell.swift
-//  St Jude Kiosk App
+//  GitHub App
 //
-//  Created by suresh on 20/05/20.
-//  Copyright © 2020 QCompile. All rights reserved.
+//  Created by Sureshkumar Linganathan on 27/10/21.
+//  Copyright © 2020 SureshKumar. All rights reserved.
 //
 
 import UIKit
