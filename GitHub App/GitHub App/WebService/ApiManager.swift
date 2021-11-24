@@ -59,24 +59,6 @@ class ApiManager {
 
 extension ApiManager{
     
-    class func downlaodImage(url:String,successCallback:@escaping successCallback,failureCallback:@escaping failureCallback){
-        
-        
-        _ = WebService.initiateServiceCall(headers:[:], withMethod:.get, urlStr:url, requestObj:nil, successCallBack: { (success,response) in
-            
-            successCallback(success,response)
-            
-        }, failureCallback: { (msg) in
-            failureCallback(msg)
-        })
-        
-        
-    }
-    
-}
-
-extension ApiManager{
-    
     class func fetchContributorList(path:String,successCallback:@escaping successCallback,failureCallback:@escaping failureCallback){
         
         let (url,headers) = WebServiceConfig.getUrlWithHeaders(forActionType:.fetchContributor, forHeaderType:.basic, queryString:[:], apiType:.secondVersion, paths:[path])

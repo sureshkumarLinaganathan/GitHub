@@ -29,21 +29,21 @@ class RepoListViewModelTests: XCTestCase {
     func test_fetch_repo_list() {
         
         mockAPIService.responseType = .success
-        viewModel?.query(for:"swift", sortType:"stars")
+        viewModel?.fetchRepoList()
         XCTAssertEqual(viewModel?.repoList.value.count,1)
     }
     
     func test_fetch_repo_list_failure(){
         
         mockAPIService.responseType = .failure
-        viewModel?.query(for:"swift", sortType:"stars")
+        viewModel?.fetchRepoList()
         XCTAssertEqual(viewModel?.failure.value, "Something went wrong!")
     }
     
     func test_fetch_repo_list_empty(){
         
         mockAPIService.responseType = .successWithEmptyData
-        viewModel?.query(for:"swift", sortType:"stars")
+        viewModel?.fetchRepoList()
         XCTAssertEqual(viewModel?.repoList.value.count,0)
         
     }
@@ -51,21 +51,21 @@ class RepoListViewModelTests: XCTestCase {
     func test_fetch_repo_list_failure_with_empty_msg(){
         
         mockAPIService.responseType = .failureWithOutMsg
-        viewModel?.query(for:"swift", sortType:"stars")
+        viewModel?.fetchRepoList()
         XCTAssertEqual(viewModel?.failure.value,"")
     }
     
     func test_fetch_repo_list_timeout(){
         
         mockAPIService.responseType = .timeOut
-        viewModel?.query(for:"swift", sortType:"stars")
+        viewModel?.fetchRepoList()
         XCTAssertEqual(viewModel?.failure.value,"Request Time out")
     }
     
     func test_check_loading_status(){
         
         mockAPIService.responseType = .loadingIndicatorStatus
-        viewModel?.query(for:"swift", sortType:"stars")
+        viewModel?.fetchRepoList()
         XCTAssertEqual(viewModel?.apiLoadingStatus.value,false)
     }
     

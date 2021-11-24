@@ -24,9 +24,8 @@ class APIServiceTests: XCTestCase {
     func test_fetch_repo_list(){
         
         let serviceProvider = self.serviceProvider
-        let dict = ["q":"language:swift","order":"desc","sort":"stars"]
         let expect = XCTestExpectation(description: "callback")
-        serviceProvider?.fetchRepo(dict:dict, successCallback: { (success,response) in
+        serviceProvider?.fetchRepo(successCallback: { (success,response) in
             
             expect.fulfill()
             XCTAssertNotNil(response)
