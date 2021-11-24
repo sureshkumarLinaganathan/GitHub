@@ -2,7 +2,7 @@
 //  MockService.swift
 //  GitHub AppTests
 //
-//  Created by Sureshkumar Linganathan on 29/10/21.
+//  Created by Sureshkumar Linganathan on 24/11/21.
 //
 
 import Foundation
@@ -12,7 +12,7 @@ class MockServices: RepoListServiceProviderProtocol {
     
     var responseType:MockApiResponseType = .success
     
-    func fetchRepo(dict: [String : String], successCallback: @escaping successCallback, failureCallback: @escaping failureCallback) {
+    func fetchRepo(successCallback: @escaping successCallback, failureCallback: @escaping failureCallback) {
         
         switch responseType {
         case .success:

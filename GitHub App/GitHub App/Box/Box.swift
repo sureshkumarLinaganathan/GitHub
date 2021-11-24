@@ -2,8 +2,7 @@
 //  Box.swift
 //  GitHub App
 //
-//  Created by Sureshkumar Linganathan on 27/10/21.
-//  Copyright © 2020 SureshKumar. All rights reserved.
+//  Created by Sureshkumar Linganathan on 24/11/21.
 //
 
 import Foundation
@@ -32,7 +31,5 @@ class Box<T> {
     deinit {
         listener = nil
     }
-    
-    
     
 }

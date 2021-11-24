@@ -2,8 +2,7 @@
 //  ApiManager.swift
 //  GitHub App
 //
-//  Created by Sureshkumar Linganathan on 27/10/21.
-//  Copyright © 2020 SureshKumar. All rights reserved.
+//  Created by Sureshkumar Linganathan on 24/11/21.
 //
 
 import Foundation
@@ -12,9 +11,9 @@ import Foundation
 class ApiManager {
     
     
-    class func fetchRepo(dict:[String:String],successCallback:@escaping successCallback,failureCallback:@escaping failureCallback){
+    class func fetchRepo(successCallback:@escaping successCallback,failureCallback:@escaping failureCallback){
         
-        let (url,headers) = WebServiceConfig.getUrlWithHeaders(forActionType:.fetchRepo, forHeaderType:.basic, queryString: dict, apiType:.firstVersion,paths:nil)
+        let (url,headers) = WebServiceConfig.getUrlWithHeaders(forActionType:.fetchRepo, forHeaderType:.basic, queryString:[:], apiType:.firstVersion,paths:nil)
         
         _ = WebService.initiateServiceCall(headers:headers, withMethod:.get, urlStr:url, requestObj:nil, successCallBack: { (success,response) in
             
@@ -29,7 +28,7 @@ class ApiManager {
                 
                 let json = try JSONSerialization.jsonObject(with:data, options:[])
                 
-                guard let dict = json as? [String:Any],let arr = dict["items"] as? [[String:Any]] else{
+                guard let arr = json as? [[String:Any]] else{
                     DispatchQueue.main.async {
                         failureCallback("Incorrect data format.")
                     }

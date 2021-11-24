@@ -2,7 +2,7 @@
 //  HomeViewModel.swift
 //  GitHub App
 //
-//  Created by Sureshkumar Linganathan on 27/10/21.
+//  Created by Sureshkumar Linganathan on 24/11/21.
 //
 
 import Foundation
@@ -19,15 +19,12 @@ class RepoListViewModel{
         self.serviceProvider = serviceProvider
     }
     
-    func query(for language:String,sortType:String ){
+    func fetchRepoList(){
         
         
         self.apiLoadingStatus.value = true
-        
-        var dict = ["q":"language:"+language,"order":"desc"]
-        dict.updateValue(sortType, forKey:"sort")
-        self.repoList.value = []
-        self.serviceProvider.fetchRepo(dict:dict) {[weak self] (success,response) in
+
+        self.serviceProvider.fetchRepo{[weak self] (success,response) in
             self?.apiLoadingStatus.value = false
             guard let repos = response as? [RepoInfo] else{
                 self?.repoList.value = []

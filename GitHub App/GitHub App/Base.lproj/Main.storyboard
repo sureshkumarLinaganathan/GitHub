@@ -18,29 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="msP-gJ-aIS">
-                                <rect key="frame" x="0.0" y="44.5" width="320" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ino-pm-7YZ">
-                                        <rect key="frame" x="140" y="0.0" width="40" height="40"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                                        <state key="normal" title="Sort">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sortButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gb7-ri-D4g"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="Ino-pm-7YZ" firstAttribute="centerX" secondItem="msP-gJ-aIS" secondAttribute="centerX" id="Lv8-dU-9KL"/>
-                                    <constraint firstAttribute="height" constant="40" id="gd7-7W-9Y6"/>
-                                    <constraint firstItem="Ino-pm-7YZ" firstAttribute="centerY" secondItem="msP-gJ-aIS" secondAttribute="centerY" id="zNC-oa-hDZ"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kt-Yy-Gmo">
-                                <rect key="frame" x="0.0" y="84.5" width="320" height="0.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="320" height="0.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="Q4w-uo-Kgx"/>
@@ -50,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6ry-7m-IGB">
-                                <rect key="frame" x="0.0" y="85" width="320" height="483"/>
+                                <rect key="frame" x="0.0" y="45" width="320" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yc3-Uo-ce8">
                                     <size key="itemSize" width="317" height="197"/>
@@ -147,17 +126,14 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="6ry-7m-IGB" secondAttribute="bottom" id="BwM-N0-8Dh"/>
                             <constraint firstItem="5kt-Yy-Gmo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="C9S-YQ-gen"/>
-                            <constraint firstItem="msP-gJ-aIS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dq4-j5-LCA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="msP-gJ-aIS" secondAttribute="trailing" id="HpO-36-SJV"/>
+                            <constraint firstItem="5kt-Yy-Gmo" firstAttribute="top" secondItem="rxC-wI-yU3" secondAttribute="bottom" id="DEL-Th-Hkl"/>
                             <constraint firstItem="6ry-7m-IGB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jz9-fl-eGZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rxC-wI-yU3" secondAttribute="trailing" id="L2r-CE-YeZ"/>
-                            <constraint firstItem="5kt-Yy-Gmo" firstAttribute="top" secondItem="msP-gJ-aIS" secondAttribute="bottom" id="WYt-3b-T2o"/>
                             <constraint firstItem="5kt-Yy-Gmo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZAo-no-3PM"/>
-                            <constraint firstItem="msP-gJ-aIS" firstAttribute="top" secondItem="rxC-wI-yU3" secondAttribute="bottom" id="dVp-IV-L0x"/>
                             <constraint firstItem="rxC-wI-yU3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dwJ-se-NTp"/>
                             <constraint firstAttribute="trailing" secondItem="6ry-7m-IGB" secondAttribute="trailing" id="fCb-v6-BCF"/>
                             <constraint firstItem="rxC-wI-yU3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gJi-C4-eWl"/>
-                            <constraint firstItem="6ry-7m-IGB" firstAttribute="top" secondItem="5kt-Yy-Gmo" secondAttribute="bottom" id="pXk-Fc-PxA"/>
+                            <constraint firstItem="6ry-7m-IGB" firstAttribute="top" secondItem="5kt-Yy-Gmo" secondAttribute="bottom" id="ik6-q2-Su7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Repo List" id="eDa-wZ-F4j"/>

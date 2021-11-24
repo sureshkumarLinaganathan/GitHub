@@ -2,7 +2,7 @@
 //  RepoListCollectionViewCell.swift
 //  GitHub App
 //
-//  Created by Sureshkumar Linganathan on 27/10/21.
+//  Created by Sureshkumar Linganathan on 24/11/21.
 //
 
 import UIKit

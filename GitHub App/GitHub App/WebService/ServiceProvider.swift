@@ -2,13 +2,12 @@
 //  ServiceProvider.swift
 //  GitHub App
 //
-//  Created by Sureshkumar Linganathan on 27/10/21.
-//  Copyright © 2020 SureshKumar. All rights reserved.
+//  Created by Sureshkumar Linganathan on 24/11/21.
 //
 
 protocol RepoListServiceProviderProtocol {
     
-    func fetchRepo(dict:[String:String],successCallback:@escaping successCallback,failureCallback:@escaping failureCallback)
+    func fetchRepo(successCallback:@escaping successCallback,failureCallback:@escaping failureCallback)
 }
 
 protocol RepoDetailServiceProviderProtocol{
@@ -22,9 +21,9 @@ protocol RepoDetailServiceProviderProtocol{
 class  ServiceProvider:RepoListServiceProviderProtocol,RepoDetailServiceProviderProtocol{
     
     
-    func fetchRepo(dict:[String:String],successCallback:@escaping successCallback,failureCallback:@escaping failureCallback){
+    func fetchRepo(successCallback:@escaping successCallback,failureCallback:@escaping failureCallback){
         
-        ApiManager.fetchRepo(dict:dict) { (success,response) in
+        ApiManager.fetchRepo{ (success,response) in
             successCallback(success,response)
         } failureCallback: { (msg) in
             failureCallback(msg)

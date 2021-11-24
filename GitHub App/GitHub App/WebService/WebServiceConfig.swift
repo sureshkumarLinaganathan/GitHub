@@ -2,8 +2,7 @@
 //  WebServiceConfig.swift
 //  GitHub App
 //
-//  Created by Sureshkumar Linganathan on 27/10/21.
-//  Copyright © 2020 SureshKumar. All rights reserved.
+//  Created by Sureshkumar Linganathan on 24/11/21.
 //
 
 import UIKit
@@ -22,7 +21,7 @@ enum UrlVersionType: String{
 
 enum ActionType : String {
     
-    case fetchRepo = "search/repositories"
+    case fetchRepo = "repositories"
     case fetchContributor = "/contributors"
     case fetchIssues = "/issues"
     case fetchComments = "/comments"

@@ -32,11 +32,6 @@
 		D5C1972E27287F54001FF366 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C1972827287F54001FF366 /* RequestManager.swift */; };
 		D5C1972F27287F54001FF366 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C1972927287F54001FF366 /* ServiceProvider.swift */; };
 		D5C197382728861E001FF366 /* RepoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C197372728861E001FF366 /* RepoInfo.swift */; };
-		D5F41EE1272994EC0038012D /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F41EE0272994EC0038012D /* PopupView.swift */; };
-		D5F41EEA272995080038012D /* PopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5F41EE9272995080038012D /* PopupView.xib */; };
-		D5F41F07272997070038012D /* SuggestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5F41F05272997070038012D /* SuggestionTableViewCell.xib */; };
-		D5F41F08272997070038012D /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F41F06272997070038012D /* SuggestionTableViewCell.swift */; };
-		D5F41F0D272997640038012D /* SortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F41F0C272997640038012D /* SortType.swift */; };
 		D5F41F2B2729B1040038012D /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F41F2A2729B1040038012D /* LoadingIndicator.swift */; };
 		D5F41F342729B1220038012D /* LoadingIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5F41F332729B1220038012D /* LoadingIndicator.xib */; };
 		D5F427E52729D4620038012D /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F427E42729D4620038012D /* RepoDetailViewController.swift */; };
@@ -96,11 +91,6 @@
 		D5C1972827287F54001FF366 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		D5C1972927287F54001FF366 /* ServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		D5C197372728861E001FF366 /* RepoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInfo.swift; sourceTree = "<group>"; };
-		D5F41EE0272994EC0038012D /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
-		D5F41EE9272995080038012D /* PopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupView.xib; sourceTree = "<group>"; };
-		D5F41F05272997070038012D /* SuggestionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestionTableViewCell.xib; sourceTree = "<group>"; };
-		D5F41F06272997070038012D /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
-		D5F41F0C272997640038012D /* SortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortType.swift; sourceTree = "<group>"; };
 		D5F41F2A2729B1040038012D /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		D5F41F332729B1220038012D /* LoadingIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingIndicator.xib; sourceTree = "<group>"; };
 		D5F427E42729D4620038012D /* RepoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
@@ -293,30 +283,9 @@
 			path = WebService;
 			sourceTree = "<group>";
 		};
-		D5F41EE5272994F00038012D /* Popup */ = {
-			isa = PBXGroup;
-			children = (
-				D5F41F06272997070038012D /* SuggestionTableViewCell.swift */,
-				D5F41F05272997070038012D /* SuggestionTableViewCell.xib */,
-				D5F41EE0272994EC0038012D /* PopupView.swift */,
-				D5F41EE9272995080038012D /* PopupView.xib */,
-				D5F41F11272997F20038012D /* Model */,
-			);
-			path = Popup;
-			sourceTree = "<group>";
-		};
-		D5F41F11272997F20038012D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D5F41F0C272997640038012D /* SortType.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D5F41F262729B0DC0038012D /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				D5F41EE5272994F00038012D /* Popup */,
 				D5F41F2F2729B10B0038012D /* LoadingIndicator */,
 			);
 			path = Component;
@@ -494,8 +463,6 @@
 				D58995F627283478000EF7F3 /* Assets.xcassets in Resources */,
 				D50F2F812729F56A00DDD098 /* RepoDetailTableViewCell.xib in Resources */,
 				D5F41F342729B1220038012D /* LoadingIndicator.xib in Resources */,
-				D5F41F07272997070038012D /* SuggestionTableViewCell.xib in Resources */,
-				D5F41EEA272995080038012D /* PopupView.xib in Resources */,
 				D58995F427283478000EF7F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,9 +534,6 @@
 				D52273F7272928B10057523B /* RepoListCollectionViewCell.swift in Sources */,
 				D58995F127283478000EF7F3 /* RepoListViewController.swift in Sources */,
 				D5C1972C27287F54001FF366 /* WebServiceConfig.swift in Sources */,
-				D5F41F08272997070038012D /* SuggestionTableViewCell.swift in Sources */,
-				D5F41F0D272997640038012D /* SortType.swift in Sources */,
-				D5F41EE1272994EC0038012D /* PopupView.swift in Sources */,
 				D5C1972D27287F54001FF366 /* Parser.swift in Sources */,
 				D52273D32729124D0057523B /* RepoListViewModel.swift in Sources */,
 				D5227400272932B40057523B /* Utils.swift in Sources */,

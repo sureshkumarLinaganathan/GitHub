@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  GitHub App
 //
-//  Created by Sureshkumar Linganathan on 26/10/21.
+//  Created by Sureshkumar Linganathan on 24/11/21.
 //
 
 import UIKit
@@ -15,26 +15,15 @@ class RepoListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var searchController:UISearchController!
-    private var popup = PopupView()
     private var loadingIndicator = LoadingIndicator()
-    
     private var repoListViewModel = RepoListViewModel()
-    private var selectedLanguage = "swift"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLoadingIndicator()
         bindViewModel()
-        setupSearchView()
-        setupPopup()
-        fetchRepoList(language:selectedLanguage)
-    }
-    
-    @IBAction func sortButtonTapped(_ sender: Any) {
-        
-        popup.show()
+        fetchRepoList()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,35 +38,10 @@ class RepoListViewController: UIViewController {
 
 extension RepoListViewController{
     
-    private func setupSearchView(){
-        
-        searchController = UISearchController(searchResultsController:nil)
-        searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Enter programing language"
-        searchController.searchBar.autocapitalizationType = .none
-        searchController.obscuresBackgroundDuringPresentation = false
-        navigationItem.searchController = searchController
-        
-    }
-    
-    private func setupPopup(){
-        
-        popup =  popup.initWithView(view:self.view)
-        let arr = [SortType(name:"Stars", isSelected:true),SortType(name:"Forks"),SortType(name:"Updated_At")];
-        popup.setupDataSource(datasoure:arr)
-        popup.delegate = self
-        self.view.addSubview(popup)
-    }
-    
     private func setupLoadingIndicator(){
         
         loadingIndicator = loadingIndicator.initWithView(view:self.view)
         self.view.addSubview(loadingIndicator)
-    }
-    
-    private func dismissSarchBar(){
-        self.searchController.dismiss(animated:true, completion:nil)
-        self.view.layoutIfNeeded()
     }
 }
 
@@ -115,8 +79,8 @@ extension RepoListViewController{
 
 extension RepoListViewController{
     
-    private func fetchRepoList(language:String,sortType:String = "stars"){
-        repoListViewModel.query(for:language, sortType:sortType)
+    private func fetchRepoList(){
+        repoListViewModel.fetchRepoList()
     }
 }
 
@@ -160,34 +124,6 @@ extension RepoListViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
         let sectionInset = UIEdgeInsets(top: CELL_INSET, left: CELL_INSET, bottom: CELL_INSET, right: CELL_INSET)
         return sectionInset
-    }
-}
-
-
-extension RepoListViewController:UISearchBarDelegate{
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        guard let text = searchBar.text else{
-            return
-        }
-        let  strippedString = text.trimmingCharacters(in:.whitespacesAndNewlines)
-        dismissSarchBar()
-        if strippedString.count > 0{
-            selectedLanguage = text.lowercased()
-            fetchRepoList(language:selectedLanguage)
-        }
-    }
-}
-
-extension RepoListViewController:PopupViewProtocol{
-    
-    func didSelectSortType(popupView: PopupView, type: SortType) {
-        
-        guard let sortStr = type.name else{
-            return
-        }
-        fetchRepoList(language:selectedLanguage,sortType:sortStr.lowercased())
     }
 }
 
